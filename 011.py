@@ -10,21 +10,17 @@ sys.stdin = io.StringIO(_INPUT)
 ##########################################
 N = int(input())
 
-import math
-
 def check(n):
     ans = []
     for i in range(2,n+1):
         flag = True
-        for j in range(2,i+1):
-            print (i,j)
-            if i%j!=0:
+        for j in range(2,i):#2以上i-1以下の数
+            #print (i,j)
+            if i%j==0:
                 flag = False
+                
         if flag ==True:
             ans.append(i)
     return ans
 
-
-count = 0
-
-print (check(N))
+print (*check(N))
