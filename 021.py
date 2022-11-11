@@ -19,10 +19,12 @@ ans = 0
 for i in range(1<<N):
     cost = 0
     #print (i)
+    num = 0
     for j in range(N):
         if i>>j&1 ==1:
             cost+=Alist[j]
-    if cost==thou:
+            num+=1
+    if cost==thou and num==5:
         ans+=1
 
 print (ans)
