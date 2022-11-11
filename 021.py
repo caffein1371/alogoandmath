@@ -14,17 +14,9 @@ N = int(input())
 Alist = list(map(int,input().split()))
 thou = 1000
 ans = 0
-#print (2**N)
-#Nを2進数に変換したものを1bitずつ左へずらす
-for i in range(1<<N):
-    cost = 0
-    #print (i)
-    num = 0
-    for j in range(N):
-        if i>>j&1 ==1:
-            cost+=Alist[j]
-            num+=1
-    if cost==thou and num==5:
+import itertools
+ans= 0
+for i in itertools.combinations(Alist,5):
+    if sum(i)==1000:
         ans+=1
-
 print (ans)
