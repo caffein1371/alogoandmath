@@ -13,10 +13,13 @@ sys.stdin = io.StringIO(_INPUT)
 N = int(input())
 Alist = list(map(int,input().split()))
 thou = 1000
-ans = 0
-import itertools
+
 ans= 0
-for i in itertools.combinations(Alist,5):
-    if sum(i)==1000:
-        ans+=1
+for i in range(N):
+    for j in range(i+1,N):
+        for k in range(j+1,N):
+            for l in range(k+1,N):
+                for m in range(l+1,N):
+                    if Alist[i]+Alist[j]+Alist[k]+Alist[l]+Alist[m]==thou:
+                        ans+=1
 print (ans)
