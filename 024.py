@@ -3,15 +3,19 @@ import io
 import sys
 
 _INPUT = """\
-3
-1 2 3
-10 20 30
+2
+2 50
+4 100
 
 """
 sys.stdin = io.StringIO(_INPUT)
 ##########################################
 N = int(input())
-Blist = list(map(int,input().split()))
-Rlist = list(map(int,input().split()))
-
-print (sum(Blist)/N+sum(Rlist)/N)
+PQ = []
+for i in range(N):
+    P,Q = map(int,input().split())
+    PQ.append([P,Q])
+ans = 0
+for i in range(N):
+    ans+=1/PQ[i][0]*PQ[i][1]
+print (ans)
