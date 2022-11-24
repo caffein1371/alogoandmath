@@ -11,6 +11,7 @@ sys.stdin = io.StringIO(_INPUT)
 from functools import lru_cache
 
 @lru_cache(maxsize=None)
+
 def fib(n):
     if n ==1 or n==2:
         return 1
@@ -18,5 +19,6 @@ def fib(n):
     return fib(n-1)+fib(n-2)
 
 N = int(input())
-print (fib(N)%10**9)
+MOD = 10**9
+print (fib(N)%MOD)
 
